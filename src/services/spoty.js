@@ -1,28 +1,10 @@
-//CONSUMIENDO APIS
-
-
 import {URI,PETICION} from '../helpers/DatospeticionGet.js'
-//1.PARA DONDE VOY
+import {consultarCanciones} from './servicioConsultarCanciones.js'
+import {pintarCanciones} from '../controllers/controladorPintarCaciones.js'
 
+//CONSUMIR UN API (CONSUMIR UN SERVICIO)
+let canciones=await consultarCanciones(URI,PETICION)
+console.log(canciones)
 
-//CONFIGURA LA PETICION
-//3.arranca pues
-//consumo del API
-
-fetch(URI,PETICION)
-.then(function(respuesta){
-    return respuesta.json()
-})
-
-.then(function(respuesta){
-    console.log(respuesta)
-    console.log(respuesta.tracks)
-    let fila= document.getElementById('fila')
-
-    
-})  
- 
-
-.catch(function(error){
-    console.log(error)
-})
+//Renderizo los DATOS
+pintarCanciones(canciones.tracks)

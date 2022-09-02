@@ -1,5 +1,5 @@
-function pintarCarrito(canciones){
-    canciones.tracks.forEach(function(cancion){
+export function pintarCanciones(canciones){
+    canciones.forEach(function(cancion){
         
         let columna = document.createElement('div')
         columna.classList.add('col')
@@ -20,9 +20,16 @@ function pintarCarrito(canciones){
         imagen.classList.add("w-100")
         imagen.src=cancion.album.images[0].url
 
+        
+        let popularidad=document.createElement("h3")
+        popularidad.classList.add("text-center")
+        popularidad.textContent= cancion.name
+
+
         tarjeta.appendChild(nombre)
         tarjeta.appendChild(imagen)
         tarjeta.appendChild(audio)
+        tarjeta.appendChild(popularidad)
         columna.appendChild(tarjeta)
         fila.appendChild(columna)
 
