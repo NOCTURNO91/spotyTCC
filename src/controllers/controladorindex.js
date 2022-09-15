@@ -11,10 +11,11 @@ botonArtista.addEventListener("click",function(evento){
     const URI=generarURI(artista.value)
 
     async function activarServicio(){
-
         let canciones=await consultarCanciones(URI.PETICION)
         console.log(canciones)
         
     }
+
+    activarServicio()
     
 })

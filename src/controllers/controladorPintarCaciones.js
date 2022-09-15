@@ -1,4 +1,5 @@
 export function pintarCanciones(canciones){
+    let fila = document.getElementById("fila")
     canciones.forEach(function(cancion){
         
         let columna = document.createElement('div')

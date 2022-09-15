@@ -1,13 +1,20 @@
-const ID_ARTISTA="0fauHpmSHwodVYIjTqOGHz"
+import { obtenerToken } from "../services/serviciosGenerarToken.js"
 
-export const URI=`https://api.spotify.com/v1/artists/${ID_ARTISTA}/top-tracks?market=US`
+// 1.PARA DONDE VOY
 
-const TOKEN="Bearer BQAuJrEo7aRK8J_250VtdgR6k19kk-d7rJ1StufEuXJx8SQgJPuCiCjDNB1tNe00NT035_vNXSpmBRUJFrncZxmaeX8yFk5xBZqaH7d18AQ0Lc2JF9lYiMiFlq6mXHp_Q3uvn-zB3VVzIVIRSkTMe5v05qbU6pd_2dIMak90e4pcDGoOFz6nX6WO91TuRaQOsEc"
+//LLAMAR AL SERVICIO DE TOKEN
+let tokenRAMDOM=await obtenerToken()
+
+let token=tokenRAMDOM.token_type+""+tokenRAMDOM.access_token
+
+//ES UN CONJUNTO DE HERRAMIENTAS QUE FACILITAN
+
+// 2.configurar la peticion
 
 export const PETICION={
     method: "GET",
     headers: {
-        Authorization:TOKEN
+        Authorization:token
 
     }
 }
