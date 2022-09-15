@@ -1,21 +1,19 @@
-import { obtenerToken } from "../services/serviciosGenerarToken.js"
+import {obtenerToken} from "../services/generarToken.js"
 
-// 1.PARA DONDE VOY
+// 1. Para donde voy
 
-//LLAMAR AL SERVICIO DE TOKEN
+// Llamar al servicio de token
 let tokenRAMDOM=await obtenerToken()
 
-let token=tokenRAMDOM.token_type+""+tokenRAMDOM.access_token
+let token=tokenRAMDOM.token_type+" "+tokenRAMDOM.access_token
 
-//ES UN CONJUNTO DE HERRAMIENTAS QUE FACILITAN
+//es un conjunto de herramientas que facilitan 
 
-// 2.configurar la peticion
+// 2. Configurar la petición
 
 export const PETICION={
     method: "GET",
     headers: {
-        Authorization:token
-
+        Authorization: token
     }
 }
-
